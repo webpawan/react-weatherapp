@@ -84,11 +84,10 @@ transform: translateY(0);}
 
 .box:hover{
   transform: translateY(2px);
-  box-shadow: .3rem .3rem .8rem rgba(0, 0, 0, 0.1) !important;
+  box-shadow: .3rem .3rem .8rem rgba(0, 0, 0, 0.1) ;
 }
-
 .box-1{
-  box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.103) !important;
+  box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.103) ;
 
   color: white;
 background-color: rgba(81,27,117,.2) !important;
@@ -108,13 +107,4 @@ transition: all .5s;
 
 
 
-    @media only screen and(max-width:450px){
-.centerDiv{
-  background-color: red !important;
-}
-
-body{
-  background-color: red;
-}
-
-    } 
+  
