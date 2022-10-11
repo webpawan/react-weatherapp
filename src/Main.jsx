@@ -9,6 +9,7 @@ const Main = () => {
 <div className="row d-flex justify-content-center align-items-center vh-100 ">
 <Mytempcontainer/>
 <Mymap/>
+
 </div>
 </div>
     </>
