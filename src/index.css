@@ -104,6 +104,20 @@ transition: all .5s;
       opacity: .9;
   }
 
+  .smallloder{
+  width: 1.5rem;
+  }
 
 
+  .loading{
+    height: 100%;
+    background: url(/src/img/loader_gif_1.gif)center/cover no-repeat;
+z-index: 9999;
+  }
+
+  .convert{
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-shadow: .3rem.3rem 1rem rgba(255, 255, 255, 0.3),-.3rem -.3rem 1rem rgba(255, 255, 255, 0.3);}
   

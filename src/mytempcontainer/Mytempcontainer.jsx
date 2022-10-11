@@ -1,36 +1,35 @@
 import React,{useState,useEffect} from 'react'
-import Basicinfo from './BasicInfo';
-import Forcast from './Forcast'
 import InputData from './InputData';
-import ShowInfo from './MainInfo';
+
 
 const Mytempcontainer = () => {
 
-  const [search, setsearch] = useState('indore');
-  const [count, setCount] = useState(0);
- 
-  const [location, setlocation] = useState([]);
-  const [forecast, setForecast] = useState([]);
-
+  const [search, setsearch] = useState('sagar');
+  const [ready, setReady] = useState(false);
+  const [forecast, setForecast] = useState({});
 
   useEffect(() => {
+    
   const fatchdata = async () =>{
-    let url =  `https://api.weatherapi.com/v1/forecast.json?key=bf0c1deadade48fbb5e132904221010&q=${search}&days=${count}&aqi=no&alerts=no`;
+    let url =  `https://api.weatherapi.com/v1/forecast.json?key=bf0c1deadade48fbb5e132904221010&q=${search}&days=14&aqi=no&alerts=no`;
     let getdata = await fetch(url);
     let realdata = await getdata.json();
-    setlocation(realdata.location);
-    setForecast(realdata.forecast);
+   if(realdata.forecast !== undefined){
+    setForecast(realdata.forecast.forecastday);
+   }
+   setReady(true);
     };
     fatchdata();
-  },[search,count]);
+  },[search]);
 
+if(ready){
   return (
-    <div className="col-12 col-sm-10 col-lg-7 centerDiv p-2 mx-4 my-4" id="show">
- <InputData search={setsearch} countTime={setCount} countValue={count}/>
-<ShowInfo/>
-<Basicinfo/>
-<Forcast/>
+    <div className="col-12 col-sm-10 col-lg-7 centerDiv p-2 mx-4 my-4" id="show" >
+ <InputData search={setsearch} MyData={forecast} city={search}/>
   </div> 
   )
+}
+return <div className="loading"></div>
+
 }
 export default Mytempcontainer;
