@@ -7,7 +7,6 @@ const Mytempcontainer = () => {
   const [search, setsearch] = useState('sagar');
   const [ready, setReady] = useState(false);
   const [forecast, setForecast] = useState({});
- const [current, setCurrent] = useState({});
 
   useEffect(() => {
   
@@ -19,7 +18,6 @@ const Mytempcontainer = () => {
         
        if(realdata.forecast !== undefined){
         setForecast(realdata.forecast.forecastday);
-setCurrent(realdata.current);
        }
        setReady(true);
         };
@@ -37,7 +35,7 @@ if(ready){
   return (
     <>
     <div className="col-12 col-sm-10 col-lg-7 centerDiv p-2 mx-4 my-4 text-center " id="show" >
- <InputData search={setsearch} MyData={forecast} CurrentData={current} city={search}/>
+ <InputData search={setsearch} MyData={forecast}  city={search}/>
   </div> 
   <Mymap city={search} />
     </>

@@ -9,10 +9,10 @@ const MainInfo = (Data) => {
     <div className=" d-sm-flex text-center justify-content-center align-items-end ">
   <h1 className="temp " id="temp">{data.avgtemp_c}<sup>&#176;c</sup></h1> 
   <img src={data.condition.icon} alt="img"/>
-  
+  <h6 className='avg text-white'>(average temperature)</h6>
 </div>
 
-<h6 className="text-center text-white "  > <span className='maxtemp'>max_tempature {data.maxtemp_c} </span> / <span className='mintemp'>min_tempature {data.mintemp_c} </span></h6> 
+
     
     </>
   )

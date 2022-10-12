@@ -152,3 +152,7 @@ z-index: 9999;
       background: linear-gradient(45deg,  rgba(255,108,108,1) 56%, rgba(255,149,0,1) 100%);
       
     }
+
+    .avg{
+      font-weight: 100;
+    }
