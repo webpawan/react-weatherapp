@@ -13,7 +13,7 @@ let url = `https://maps.google.com/maps?q=${city.city}&t=&z=13&ie=UTF8&iwloc=&ou
     {/* <h5 class="text-white lead">type the city name in the input ⬅️ and enter </h5> */}
     
    
-    <iframe width="460" height="473" src={url}></iframe>
+    <iframe title="map" width="460" height="473" src={url}></iframe>
      
     </div>
   )

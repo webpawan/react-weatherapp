@@ -128,7 +128,7 @@ z-index: 9999;
 
     select{
       background-color: transparent;
-      border: none;
+      border: 2px solid white;
       color: whitesmoke;
       outline: none;
     }
@@ -136,7 +136,19 @@ z-index: 9999;
       background-color: rgba(81,27,117,1);
      outline: none;
      border: none;
+
     }
     label{
       color: whitesmoke;
+    }
+
+    .btn-outline-danger{
+      padding: .2rem 1rem;
+      
+    
+    }
+
+    .btn-outline-danger:hover{
+      background: linear-gradient(45deg,  rgba(255,108,108,1) 56%, rgba(255,149,0,1) 100%);
+      
     }
