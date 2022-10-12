@@ -1,11 +1,13 @@
 import React,{useState} from 'react'
 import loder from '../img/Search.gif';
 import ShowInfo from './MainInfo';
-import Basicinfo from './BasicInfo';
+import {Animated} from "react-animated-css";
 import Forcast from './Forcast'
 const InputData = ({city,search,MyData}) => {
 const [count, setcount] = useState(0);
- 
+const [toggle, setToggle] = useState(false);
+
+
    let Data = MyData;
  let date = '';
   if(Data[count] !==undefined ){
@@ -18,7 +20,7 @@ const [count, setcount] = useState(0);
      <h5 className="text-capitalize "> <span id="day">{date === '' ? <img src={loder} alt="showloader" className='smallloder' /> : date}  </span> 
      </h5> 
     <input type="text" className="myinput w-75  " id="inputTag" placeholder="search your location" onChange={(e) => search(e.target.value)}/>
-    <label htmlFor="forecast">next day</label>
+    <label htmlFor="forecast">Next Days </label>
 <select placeholder='day' name="forecast" value={count} onChange={e=>setcount(e.target.value)}> 
 {
   // map alway work in array that by i am using 
@@ -35,10 +37,12 @@ return (
 
    </div>
 <ShowInfo Data ={Data[count].day}/>
-<Basicinfo/>
 
-<Forcast Data={Data[count].hour}/>
-
+<Animated animationIn="fadeInLeftBig" animationOut="flipInY" isVisible={toggle}>
+{toggle && <Forcast Data={Data[count].hour} />}
+</Animated>
+{/* {toggle && <Forcast Data={Data[count].hour} />} */}
+<button className='my-3 btn btn-outline-danger text-white' onClick={()=>setToggle(!toggle)}>{toggle ? "show less" : "show more"}</button>
     </>
   )
 }

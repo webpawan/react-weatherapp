@@ -15,7 +15,7 @@ background: linear-gradient(45deg, rgba(81,27,117,1) 0%, rgba(255,108,108,1) 56%
 }
 
 .centerDiv{
- 
+
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 1rem;
   box-shadow: .3rem .3rem 2rem rgba(0, 0, 0, 0.6);
@@ -124,4 +124,19 @@ z-index: 9999;
 
     .view{
       display: inline-block !important;
+    }
+
+    select{
+      background-color: transparent;
+      border: none;
+      color: whitesmoke;
+      outline: none;
+    }
+    option{
+      background-color: rgba(81,27,117,1);
+     outline: none;
+     border: none;
+    }
+    label{
+      color: whitesmoke;
     }
