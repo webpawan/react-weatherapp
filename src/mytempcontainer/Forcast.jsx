@@ -1,13 +1,29 @@
 import React from 'react'
-const Forcast = () => {
+import Showforcastdata from './Showforcastdata';
+
+const Forcast = (Data) => {
+let data = Data.Data;
+
+   
+
+
   return (
   <div className="row text-center d-flex justify-content-center align-items-center flex-wrap">
+  {
+      Object.values(data).map((val,ind)=>{
+       let rawtime = val.time_epoch
+       let time = new Date(rawtime*1000);
 
-  <div className="col-2 box-1 d-block  mx-1 my-2"> <h4 className="py-1">jh</h4>  <h4 className="mt-2"><i className="fa-solid fa-cloud"></i></h4>
-    <h5 className=" ">15<sup>&#176;c</sup></h5>  
-  </div>
+        return <Showforcastdata key={ind} val={val} time={time}/>
+})
+   
+  }
+     
+
 
 </div> 
+
   )
+
 }
 export default Forcast;

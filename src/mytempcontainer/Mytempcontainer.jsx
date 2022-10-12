@@ -24,8 +24,9 @@ const Mytempcontainer = () => {
 
 if(ready){
   return (
-    <div className="col-12 col-sm-10 col-lg-7 centerDiv p-2 mx-4 my-4" id="show" >
+    <div className="col-12 col-sm-10 col-lg-7 centerDiv p-2 mx-4 my-4 text-center" id="show" >
  <InputData search={setsearch} MyData={forecast} city={search}/>
+ <button className='my-3 btn btn-outline-danger text-white' >show</button>
   </div> 
   )
 }

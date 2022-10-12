@@ -12,17 +12,13 @@ const [count, setcount] = useState(0);
     var d = new Date(Data[count].date_epoch*1000);
    date = d.toDateString();
   }
-
-  console.log(Data[0]);
-
   return (
     <>
-    <div className="search w-75 mx-auto text-center my-3 p-4">
+    <div className="search w-75 mx-auto text-center my-3 p-4 text-center">
      <h5 className="text-capitalize "> <span id="day">{date === '' ? <img src={loder} alt="showloader" className='smallloder' /> : date}  </span> 
      </h5> 
     <input type="text" className="myinput w-75  " id="inputTag" placeholder="search your location" onChange={(e) => search(e.target.value)}/>
     <label htmlFor="forecast">next day</label>
-
 <select placeholder='day' name="forecast" value={count} onChange={e=>setcount(e.target.value)}> 
 {
   // map alway work in array that by i am using 
@@ -38,9 +34,11 @@ return (
 </select>
 
    </div>
-<ShowInfo Data ={Data[count].day} />
+<ShowInfo Data ={Data[count].day}/>
 <Basicinfo/>
-<Forcast sendData={Data[count]}/>
+
+<Forcast Data={Data[count].hour}/>
+
     </>
   )
 }
