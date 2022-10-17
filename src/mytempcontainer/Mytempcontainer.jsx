@@ -6,13 +6,13 @@ const Mytempcontainer = () => {
 
   const [search, setsearch] = useState('sagar');
   const [ready, setReady] = useState(false);
-  const [forecast, setForecast] = useState({});
-
+  const [forecast, setForecast] = useState([]);
+const apikey = process.env.REACT_APP_MyAPI;
   useEffect(() => {
   
     try {
       const fatchdata = async () =>{
-        let url =  `https://api.weatherapi.com/v1/forecast.json?key=bf0c1deadade48fbb5e132904221010&q=${search}&days=14&aqi=no&alerts=no`;
+        let url =  `https://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=${search}&days=14&aqi=no&alerts=no`;
         let getdata = await fetch(url);
         let realdata = await getdata.json();
         
