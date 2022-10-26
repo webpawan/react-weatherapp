@@ -9,7 +9,7 @@ const Mytempcontainer = () => {
   const [forecast, setForecast] = useState([]);
 const apikey = process.env.REACT_APP_MyAPI;
   useEffect(() => {
-  
+    
     try {
       const fatchdata = async () =>{
         let url =  `https://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=${search}&days=14&aqi=no&alerts=no`;
@@ -29,7 +29,7 @@ const apikey = process.env.REACT_APP_MyAPI;
      
     }
   
-  },[search]);
+  },[search,apikey]);
 
 if(ready){
   return (
