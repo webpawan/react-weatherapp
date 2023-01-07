@@ -7,7 +7,7 @@ const Mymap = (city) => {
   
 
   return (
-    <motion.div animate={{opacity:1,x:0,transition:{delay:.5}}} initial={{opacity:0,x:10}}
+    <motion.div animate={{opacity:1,x:0,transition:{delay:.5,duration:.6}}} initial={{opacity:0,x:10}}
       className="col-12 col-sm-10 col-lg-4 centerDiv p-2 py-5 d-flex justify-content-center mx-auto"
       id="mymap"
       style={{height:'100%'}}

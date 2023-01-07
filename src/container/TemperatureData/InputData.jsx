@@ -34,6 +34,7 @@ const InputData = () => {
     <>
       <div className="row mx-auto text-center">
         <motion.div
+        animate={{opacity:1,x:0,transition:{delay:.4,duration:.6}}} initial={{opacity:0,x:-10}}
           className="col-12 col-sm-10 col-lg-7 centerDiv p-2 my-4 text-center mx-auto "
           style={{ height: "100%" }}
         >
